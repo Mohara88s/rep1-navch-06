@@ -237,6 +237,9 @@ h2 {
 .footer .soucial-links {
   display: flex;
 }
+.footer .social {
+  margin-right: auto;
+}
 .footer .soucial-links li:not(:last-child) {
   margin-right: 10px;
 }
@@ -258,6 +261,44 @@ h2 {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
+.footer input {
+  margin-right: 10px;
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+  background-color: transparent;
+  color: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.footer button {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 28px;
+  padding-left: 29px;
+  color: inherit;
+  fill: currentColor;
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+}
+.footer form {
+  display: flex;
+  align-items: center;
+}
+.subscribe svg {
+  margin-left: 10px;
+}
 /*index.html main*/
 .hero {
   background-image: linear-gradient(
