@@ -277,11 +277,10 @@ h2 {
 
 .footer button {
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 28px;
-  padding-left: 29px;
+  padding: 10px;
+  min-width: 200px;
   color: inherit;
   fill: currentColor;
   background-color: var(--accent-color);
@@ -332,8 +331,8 @@ h2 {
 }
 .hero-button {
   display: inline-block;
-  padding: 10px 32px;
-
+  padding: 10px;
+  min-width: 200px;
   color: var(--additional-color);
   background-color: var(--accent-color);
   font-weight: 900;
@@ -349,68 +348,6 @@ h2 {
 .hero-button:hover,
 .hero-button:focus {
   background-color: #188ce8;
-}
-/* модалка */
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  opacity: 1;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-  background-color: rgba(0, 0, 0, 0.2);
-}
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%) scale(1);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-  height: 581px;
-  width: 528px;
-  background-color: var(--additional-color);
-  padding: 40px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-}
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -200%) scale(0.2);
-}
-
-.modal button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  display: flex;
-  height: 30px;
-  width: 30px;
-  justify-content: center;
-  align-items: center;
-
-  background-color: var(--additional-color);
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-
-  fill: #000000;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal > button:hover {
-  fill: var(--accent-color);
 }
 
 .section-benefits {
@@ -555,7 +492,7 @@ h2 {
 .clients li:not(:last-child) {
   margin-right: 30px;
 }
-.clients a {
+.clients .client {
   width: 170px;
   height: 90px;
   box-sizing: border-box;
@@ -571,12 +508,104 @@ h2 {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.clients a:hover,
-.clients a:focus {
+.clients .client:hover,
+.clients .client:focus {
   fill: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
 
+/* модалка */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  height: 581px;
+  width: 528px;
+  background-color: var(--additional-color);
+  padding: 40px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -200%) scale(0.2);
+}
+
+.modal .close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--additional-color);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  fill: #000000;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal > .close:hover {
+  fill: var(--accent-color);
+}
+.modal-caption {
+  color: var(--main-text-color);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal .send {
+  text-align: center;
+  padding: 10px;
+  min-width: 200px;
+  color: var(--additional-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+}
+.modal .send:hover,
+.modal .send:focus {
+  background-color: #188ce8;
+}
 /*portfolio.html main*/
 .filter {
   display: flex;
@@ -657,7 +686,8 @@ h2 {
   position: absolute;
   width: 100%;
   height: 100%;
-  bottom: -100%;
+
+  transform: translateY(0);
   left: 0;
   padding: 63px 24px;
   color: var(--additional-color);
@@ -670,13 +700,13 @@ h2 {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.projects a:hover,
-.projects a:focus {
+.projects .project:hover,
+.projects .project:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.projects a:hover .info p,
-.projects a:focus .info p {
+.projects .project:hover .info p,
+.projects .project:focus .info p {
   opacity: 1;
-  bottom: 0%;
+  transform: translateY(-100%);
 }
