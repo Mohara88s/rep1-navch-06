@@ -573,7 +573,8 @@ h2 {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal > .close:hover {
+.modal > .close:hover,
+.modal > .close:focus {
   fill: var(--accent-color);
 }
 .modal-caption {
@@ -650,7 +651,7 @@ h2 {
   padding-left: 36px;
 }
 
-.modal .checkbox-pic:after {
+.modal span:after {
   content: '';
   position: absolute;
   top: 5px;
@@ -663,7 +664,7 @@ h2 {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.checkbox:checked + .checkbox-pic::after {
+.checkbox:checked ~ span::after {
   background-color: var(--accent-color);
   background-image: url(../images/check.svg);
   background-position: center;
