@@ -599,7 +599,7 @@ h2 {
   margin-bottom: 10px;
   display: block;
 }
-.modal input {
+.modal-input {
   margin-top: 4px;
   width: 448px;
   height: 40px;
@@ -643,18 +643,23 @@ h2 {
 }
 
 .modal .policy {
-  margin-top: 20px;
+  padding-top: 10px;
   margin-bottom: 30px;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   padding-left: 36px;
 }
+.checkbox-span {
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-radius: 2px;
+}
 
 .modal .checkbox-span:after {
   content: '';
   position: absolute;
-  top: 5px;
+  top: 15px;
   left: 13px;
   display: inline-block;
   border: 2px solid var(--main-text-color);
@@ -671,6 +676,11 @@ h2 {
   background-repeat: no-repeat;
   border: transparent;
 }
+.checkbox:focus ~ .checkbox-span {
+  border: 2px solid black;
+  border-radius: 2px;
+}
+
 .modal .policy a {
   color: var(--accent-color);
   text-decoration: underline;
